@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from SimulationSpecifics import *
+from SimulationParameters import *
 
 def getGradU(): # Position tensor and model may be function parameters
     # Code Here

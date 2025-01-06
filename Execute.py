@@ -1,5 +1,5 @@
-from BeadSimulation import Simulate
-from SimulationSpecifics import *
+from BeadModel import Simulate
+from SimulationParameters import *
 from MakePlots import plotPositions, plotDistances
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation

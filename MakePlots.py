@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 from itertools import combinations
-from BeadSimulation import Simulate
-from SimulationSpecifics import p,nt
+from BeadModel import Simulate
+from SimulationParameters import p,nt
 
 def plotBeadPositions(positions, simIndex, ax, title):
     x = positions[:,0,:,simIndex]
