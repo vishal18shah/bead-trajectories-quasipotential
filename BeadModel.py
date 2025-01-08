@@ -2,7 +2,7 @@ import numpy as np
 import os
 from scipy.stats import expon,norm
 from sklearn import metrics
-from SimulationSpecifics import *
+from SimulationParameters import *
 
 # for key, value in vars(SimulationParameters).items():
 #     if not key.startswith('__'):  # Ignore special/magic attributes

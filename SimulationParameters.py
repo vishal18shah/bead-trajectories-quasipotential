@@ -2,13 +2,13 @@ import numpy as np
 
 nt = 1000
 dt = 0.01
-p = 5
+p = 3
 d = 2
 xInitial = np.zeros((p, d)) 
 # seed = 3846706489  # this is a large triangle
 seed = None
-numSims = 9
-param = 0.25
+numSims = 1
+param = 1
 eps = 0.01
 
 affinity = lambda x, param: param * 2 / (1 + np.exp(20 * (np.abs(x) - 0.75)))

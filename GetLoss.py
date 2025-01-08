@@ -13,7 +13,7 @@ def getGradU(): # Position tensor and model may be function parameters
 
 def getResidue(x, gradU):
     # Single Timestep
-    #both data(positions) and gradU(gradient of potential wrt positions) should be 3x2 tensors. in the general case, they are p by d in shape
+    #both x(positions) and gradU(gradient of potential wrt positions) should be 3x2 tensors. in the general case, they are p by d in shape
     v1 = torch.zeros(3, 2)
     for k in range(3):
         v1[k, :] += -1 * k_c * x[k,:] * (torch.norm(x[k,:]) ** 2)

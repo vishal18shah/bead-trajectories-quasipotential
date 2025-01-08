@@ -7,21 +7,17 @@ Make a table of important parameters and their associated values
 
 Next TO-DO for Code
 -------------------
-1.Make Github
+1. ML Determinant function works? see if that works by running the code on a set of positions value and use torch autograd. ask chatgpt both versions.
+in a copy of the 1-bead code!!!
 
-2.
-Qualitative comparison matlab vs python. Then, if feeling confident, what measures could we do to check that values are same across python matlab. 
+2. Qualitative comparison matlab vs python. Then, if feeling confident, what measures could we do to check that values are same across python matlab. 
 first and foremost check moments for formtimes, breaktimes, and brownian. Strike a balance between time and impact in terms of coding ease/worthwhileness.
 compare seeded run(s) in matlab vs python?
-
-ML
-Determinant function works? see if that works in a copy of the 1-bead code!!!
-
-Two beads binding and never unbinding?
-Equilateral triangle is too large?
-Seems like binding times are off, answer why?
-understand that you SEED globally, THEN GENERATE seaprately
-rng is deterministic once seeded.
+# Two beads binding and never unbinding?
+# Equilateral triangle is too large?
+# Seems like binding times are off, answer why?
+# understand that you SEED globally, THEN GENERATE seapratelys
+# rng is deterministic once seeded.
 
 DONE
 -------------------
@@ -38,6 +34,9 @@ Code up R = det[M], where M = advection + diffusion + Switching
 
 [21]
 [34]x
+
+1.Make Github
+
 
 diagonals flip 01 and 10. 
 Class Attributes
