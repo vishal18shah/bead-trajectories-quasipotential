@@ -1,4 +1,5 @@
 import numpy as np
+from math import exp
 
 nt = 1000
 dt = 0.01
@@ -11,7 +12,7 @@ numSims = 1
 param = 1
 eps = 0.01
 
-affinity = lambda x, param: param * 2 / (1 + np.exp(20 * (np.abs(x) - 0.75)))
+affinity = lambda x, param: param * 2 / (1 + exp(20 * (abs(x) - 0.75)))
 stopflags = {'planes': [ {'normal': np.array([[0.0], [-0.20843747], [0.0], [0.78961351], [0.0], [-0.57711726]]), 'bias': np.array([[-0.36824147]])}  ,  {'normal': np.array([[0.0], [0.78961351], [0.0], [-0.20843747], [0.0], [-0.57711726]]),'bias': np.array([[-0.36824147]])}]}
 sep = 0.92
 k_v = 5

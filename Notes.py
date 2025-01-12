@@ -19,6 +19,13 @@ compare seeded run(s) in matlab vs python?
 # understand that you SEED globally, THEN GENERATE seapratelys
 # rng is deterministic once seeded.
 
+3. Using units in the equations
+
+4. Push ML forward by fixing path, find gradW using ML and then couple
+
+Check that determinant function works by inputting correct positions and quasipotential which should yield veyr low loss
+GetU_dU function should work, make sure autograd and backpropagation are on and use the 3bead loss function. See what comes out and fix errors as needed.
+
 DONE
 -------------------
 Fix seeding
