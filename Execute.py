@@ -11,6 +11,8 @@ sim.printSeeds()
 # print(sim.states.shape)
 # print(sim.states[:, :50, 0].T)
 print(sim.positions[:,:,:,0].shape)
+print(sim.positions[:,:,:,0])
+
 
 # plotPositions(positions = sim.positions, numPlots = 1) #assert 1 <= numPlots <= numSims
 # plotDistances(positions = sim.positions, numPlots = 1)

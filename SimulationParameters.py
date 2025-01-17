@@ -1,7 +1,7 @@
 import numpy as np
 from math import exp
 
-nt = 1000
+nt = 10
 dt = 0.01
 p = 3
 d = 2

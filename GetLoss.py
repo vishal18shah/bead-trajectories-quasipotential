@@ -65,13 +65,14 @@ def getResidue(x, gradU):
     
     M = advectionMatrix + diffusionMatrix + switchingMatrix
     residue = torch.det(M)
-    print("Determinant of M:", residue)
+    # print("Determinant of M:", residue)
+    print(M)
     return residue #see what it looks like written out. remember how to take det's of 4x4 matrices
    
 
-def getLoss(positions): #One simulation at a time so positions has shape (p,d,nt+1).
-    loss = torch.mean(np.array([getResidue(positions[:, :, t]) for t in range(positions.shape[2])]) ** 2 )
-    return None
+# def getLoss(positions): #One simulation at a time so positions has shape (p,d,nt+1).
+#     loss = torch.mean(np.array([getResidue(positions[:, :, t]) for t in range(positions.shape[2])]) ** 2 )
+#     return None
 
 
 # def testGetResidue():
