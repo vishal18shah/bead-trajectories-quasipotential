@@ -11,6 +11,7 @@ def getGradU(): # Position tensor and model may be function parameters
     # return gradU
     return
 
+"""NECESSARY CHANGES: force is xj-xi for confirnemnt/ev. AND switchingmatrix[0][0] indexing was backwards"""
 
 def getResidue(x, gradU):
     # Single Timestep
@@ -42,7 +43,7 @@ def getResidue(x, gradU):
 
     
     advectionForces = [v1, v2, v3, v4]
-    advectionForces /= phi
+    advectionForces = [x / phi for x in advectionForces]
     advectionMatrix = torch.zeros(4, 4)
     diffusionMatrix = torch.zeros(4, 4)
 

@@ -20,7 +20,7 @@ k_c = 1
 a_ev = 2
 c_ev = 0.5
 c_switch = 0.5
-phi = 1 #WAS 0.8 BEFORE
+phi = 0.8 #WAS 0.8 BEFORE
 
 
 

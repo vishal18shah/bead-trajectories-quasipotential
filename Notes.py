@@ -7,6 +7,16 @@ Make a table of important parameters and their associated values
 
 Next TO-DO for Code
 -------------------
+a. updates getloss file from testdeterminant file, or just use testdeterminant file but that testdeterminant file is correct as of now.
+
+a2. check matlab code that confinement force has (xj - xi) like we have in python.
+
+b. ML use this getloss function in the 1beadML to output the gradients. need to be able to give positions and get back quasi/gradient (torch.autograd).
+
+-------------------
+-------------------
+-------------------
+-------------------
 1. ML Determinant function works? see if that works by running the code on a set of positions value and use torch autograd. ask chatgpt both versions.
 in a copy of the 1-bead code!!!
 
