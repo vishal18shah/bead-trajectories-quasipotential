@@ -42,13 +42,15 @@ def getResidue(x, gradU):
 
     
     advectionForces = [v1, v2, v3, v4]
+    advectionForces /= phi
     advectionMatrix = torch.zeros(4, 4)
     diffusionMatrix = torch.zeros(4, 4)
 
     for i in range(4):
         advectionMatrix[i,i] = torch.sum(advectionForces[i] * gradU) # * does element-wise multiplication
-        diffusionMatrix[i,i] = torch.sum(gradU * gradU)
+        diffusionMatrix[i,i] = torch.sum(gradU * gradU) 
 
+    diffusionMatrix /= phi
 
     # make sure dimensionality is correct for torch.linalg.norm
     switchingMatrix = torch.tensor([ [                       0                             ,c_switch,c_switch ,c_switch ],
