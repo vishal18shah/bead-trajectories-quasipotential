@@ -13,6 +13,8 @@ sim.printSeeds()
 print(sim.positions[:,:,:,0].shape)
 print(sim.positions[:,:,:,0])
 
+# to get NN valid data for one simulation in one line it is as below
+Simulation(*Simulate(numSims)).positions[:,:,:,0]
 
 # plotPositions(positions = sim.positions, numPlots = 1) #assert 1 <= numPlots <= numSims
 # plotDistances(positions = sim.positions, numPlots = 1)
