@@ -65,13 +65,13 @@ def getResidue(x, gradU):
 #     return 
 
 
-def test3BeadResidueOnMatlabPath():
-    paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
-    gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
-    paths = paths.T.reshape(-1,3,2)
-    gradients = gradients.T.reshape(-1,3,2)
-    results = []
-    for i in range(10):
-        results.append(getResidue(paths[i,:,:], gradients[i,:,:]).item())
-    print(results)
-    return None
+
+paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
+gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
+paths = paths.T.reshape(-1,3,2)
+gradients = gradients.T.reshape(-1,3,2)
+results = []
+for i in range(10):
+    results.append(getResidue(paths[i,:,:], gradients[i,:,:]).item())
+print(results)
+
