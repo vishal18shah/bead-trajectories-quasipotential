@@ -9,6 +9,7 @@ def getResidue(x, gradU):
     print(x)
     print()
     x = x.reshape(3,2)
+    gradU = gradU.reshape(3,2)
     print(x.shape)
     print(x)
     v1 = torch.zeros(3, 2)
@@ -44,6 +45,9 @@ def getResidue(x, gradU):
     for i in range(4):
         advectionMatrix[i,i] = torch.sum(advectionForces[i] * gradU) # * does element-wise multiplication
         diffusionMatrix[i,i] = torch.sum(gradU * gradU) 
+    
+    print(advectionMatrix)
+
 
     diffusionMatrix /= phi
 
@@ -54,7 +58,6 @@ def getResidue(x, gradU):
                                      [   affinity((torch.linalg.norm(x[1,:] - x[2,:])), 1)   ,  0  ,  0  ,-c_switch],
                                    ])
     switchingMatrix *= param
-
     switchingMatrix00 = -1 * sum(switchingMatrix[:,0])
     switchingMatrix[0][0] = switchingMatrix00
     
