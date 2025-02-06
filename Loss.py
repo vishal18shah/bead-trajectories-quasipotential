@@ -5,13 +5,13 @@ from SimulationParameters import *
 def getResidue(x, gradU):
     # Single Timestep
     #both x(positions) and gradU(gradient of potential wrt positions) should be 3x2 tensors. In the general case, they are p by d in shape
-    print(x.shape)
-    print(x)
-    print()
-    x = x.reshape(3,2)
-    gradU = gradU.reshape(3,2)
-    print(x.shape)
-    print(x)
+    # print(x.shape)
+    # print(x)
+    # print()
+    # x = x.reshape(3,2)
+    # gradU = gradU.reshape(3,2)
+    # print(x.shape)
+    # print(x)
     v1 = torch.zeros(3, 2)
     for k in range(3):
         v1[k, :] += -1 * k_c * x[k,:] * (torch.norm(x[k,:]) ** 2)
@@ -46,7 +46,7 @@ def getResidue(x, gradU):
         advectionMatrix[i,i] = torch.sum(advectionForces[i] * gradU) # * does element-wise multiplication
         diffusionMatrix[i,i] = torch.sum(gradU * gradU) 
     
-    print(advectionMatrix)
+    # print(advectionMatrix)
 
 
     diffusionMatrix /= phi
@@ -65,6 +65,17 @@ def getResidue(x, gradU):
     residue = torch.det(M)
     return residue
 
+
+def getAllResidues(x, gradU):
+    results = []
+
+    for i in range(x.shape[0]):
+        currentX = x[i, :].reshape(3,2)
+        currentGradU = gradU[i,:].reshape(3,2)
+        currentResidue = getResidue(currentX, currentGradU)
+        results.append(currentResidue)
+
+    return results
 
 # # positions originally has shape (3,2,timesteps+1,simulations)
 # def getLoss(positions): #Gets loss for all timesteps in a single simulation. positions has shape (p,d,nt+1)
