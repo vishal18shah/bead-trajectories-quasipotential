@@ -73,25 +73,25 @@ def getAllResidues(x, gradU):
         currentX = x[i, :].reshape(3,2)
         currentGradU = gradU[i,:].reshape(3,2)
         currentResidue = getResidue(currentX, currentGradU)
-        results.append(currentResidue)
+        results.append((currentResidue))
 
-    return results
+    # return results
+    return torch.stack(results, dim=0).to(torch.float64)
 
+
+paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
+gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
+results = getAllResidues(paths.T, gradients.T)
+print(results)
+
+
+
+
+
+# Ignore the below
 # # positions originally has shape (3,2,timesteps+1,simulations)
 # def getLoss(positions): #Gets loss for all timesteps in a single simulation. positions has shape (p,d,nt+1)
 #     results = []
 #     for t in range(positions.shape[-1]):
 #         results.append()
 #     return 
-
-
-
-# paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
-# gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
-# paths = paths.T.reshape(-1,3,2)
-# gradients = gradients.T.reshape(-1,3,2)
-# results = []
-# for i in range(10):
-#     results.append(getResidue(paths[i,:,:], gradients[i,:,:]).item())
-# print(results)
-
