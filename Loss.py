@@ -79,10 +79,10 @@ def getAllResidues(x, gradU):
     return torch.stack(results, dim=0).to(torch.float64)
 
 
-paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
-gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
-results = getAllResidues(paths.T, gradients.T)
-print(results)
+# paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
+# gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
+# results = getAllResidues(paths.T, gradients.T)
+# print(results)
 
 
 
