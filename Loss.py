@@ -75,8 +75,8 @@ def getAllResidues(x, gradU):
         currentResidue = getResidue(currentX, currentGradU)
         results.append((currentResidue))
 
-    # return results
-    return torch.stack(results, dim=0).to(torch.float64)
+    return results
+    # return torch.stack(results, dim=0).to(torch.float64)
 
 
 # paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
