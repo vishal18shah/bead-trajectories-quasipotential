@@ -63,6 +63,7 @@ def getResidue(x, gradU):
     
     M = advectionMatrix + diffusionMatrix + switchingMatrix
     residue = torch.det(M)
+    residue = residue**2
     return residue
 
 
