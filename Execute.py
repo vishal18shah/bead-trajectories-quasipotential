@@ -10,7 +10,15 @@ sim = Simulation(*Simulate(numSims))
 sim.printSeeds()
 # print(sim.states.shape)
 # print(sim.states[:, :50, 0].T)
-print(sim.positions[:,:,:,0].shape)
+# print(sim.positions[:,:,:,0].shape)
+
+BONGO = sim.positions[:,:,:,0][:, :, :nt]
+BONGO = BONGO.reshape(6,10)
+# print(BONGO.shape)
+
+# [truncated_x = x[:, :, :10]]
+# print(sim.positions[:,:,:,0])
+
 # print(sim.positions[:,:,:,0])
 
 # # to get NN valid data for one simulation in one line it is as below

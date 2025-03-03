@@ -79,11 +79,22 @@ def getAllResidues(x, gradU):
     return results
     # return torch.stack(results, dim=0).to(torch.float64)
 
-
-# paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
+paths = torch.tensor(pd.read_csv('alpha1_path.txt', header = None).values)
 # gradients = torch.tensor(pd.read_csv('alpha1_dW.txt', header = None).values)
+# print(paths.shape)
 # results = getAllResidues(paths.T, gradients.T)
 # print(results)
+
+# from Execute import BONGO
+# BONGO = torch.tensor(BONGO).T
+# results2 = getAllResidues(BONGO, gradients.T)
+# print(results2)
+
+# keep path, randomize gradients
+random_tensorGradients = torch.rand(10, 6)
+results3 = getAllResidues(paths.T, random_tensorGradients)
+print(results3)
+
 
 
 
