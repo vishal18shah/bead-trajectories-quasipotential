@@ -12,8 +12,8 @@ sim.printSeeds()
 # print(sim.states[:, :50, 0].T)
 # print(sim.positions[:,:,:,0].shape)
 
-BONGO = sim.positions[:,:,:,0][:, :, :nt]
-BONGO = BONGO.reshape(6,10)
+trajectory = sim.positions[:,:,:,0][:, :, :nt]
+BONGO = trajectory.reshape(6,10)
 # print(BONGO.shape)
 
 # [truncated_x = x[:, :, :10]]
